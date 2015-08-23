@@ -24,7 +24,7 @@ class Auto_Subpage_Menu {
 		add_action( 'wp_trash_post', '_wp_delete_post_menu_item' );
 
 		// when restore page
-		add_action( 'untrashed_post ', array( &$this, 'when_trash_page' ) );
+		add_action( 'untrashed_post ', array( &$this, 'when_restore_page' ) );
 	}
 
 	/**
@@ -186,7 +186,7 @@ class Auto_Subpage_Menu {
 		}
 	}
 
-	function when_trash_page( $page_id ) {
+	function when_restore_page( $page_id ) {
 		$this->when_publish_page( $page_id );
 	}
 }
