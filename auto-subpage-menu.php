@@ -3,7 +3,7 @@
 Plugin Name: Auto Subpage Menu
 Plugin URI: https://github.com/jojoee/auto-subpage-menu
 Description: Automatically add child page into menus, update menus hierarchy when update it, remove it from menus when it's moved to trash and also add it into menus when it's restored.
-Version: 1.1
+Version: 1.1.0
 Author: Nathachai Thongniran
 Author URI: http://jojoee.com/
 Text Domain: asm
