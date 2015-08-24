@@ -24,7 +24,7 @@ this feature has no effect with **child** page, but **Auto Subpage Menu** can
 ## How to use
 
 1. Activate the plugin through the **Plugins** menu in WordPress.
-2. Go to **Menus** and check [x] *Automatically add new top-level pages to this menu*
+2. Go to **Menus** and check [x] Automatically add new top-level pages to this menu
 3. Let's see the magic
 
 ## Notes
