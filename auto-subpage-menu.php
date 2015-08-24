@@ -2,29 +2,37 @@
 /*
 Plugin Name: Auto Subpage Menu
 Plugin URI: https://github.com/jojoee/auto-subpage-menu
-Description: Automatically add child page into menus, update the menu hierarchy when page's updated and also remove page from menu when page's moved to trash
-Version: 1.0
+Description: Automatically add child page into menus, update menus hierarchy when update it, remove it from menus when it's moved to trash and also add it into menus when it's restored.
+Version: 1.1
 Author: Nathachai Thongniran
 Author URI: http://jojoee.com/
 Text Domain: asm
 License: GPL2
 */
 
+require_once( 'debug.php' );
+
 class Auto_Subpage_Menu {
 
 	function __construct() {
-
-		// when publish page
-		add_action( 'publish_page', array( &$this, 'when_publish_page' ) );
-
-		// when update page
-		add_action( 'post_updated', array( &$this, 'when_update_page' ), 10, 3 );
-		
-		// when move page to trash
+		add_action( 'post_updated', array( &$this, 'when_update_page' ), 10, 4 );
 		add_action( 'wp_trash_post', '_wp_delete_post_menu_item' );
+	}
 
-		// when restore page
-		add_action( 'untrashed_post ', array( &$this, 'when_restore_page' ) );
+	function is_restore( $page_after_status, $page_before_status ) {
+		if ( ( $page_after_status == 'publish' ) && ( $page_before_status == 'trash' ) ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function is_parent_change( $page_parent_after, $page_parent_before ) {
+		if ( $page_parent_after != $page_parent_before ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -59,7 +67,7 @@ class Auto_Subpage_Menu {
 	}
 
 	/**
-	 * Check the menu, set auto_add or not (Automatically add new top-level pages to this menu)
+	 * Check menus, set `Automatically add new top-level pages to this menu` (auto_add) or not
 	 * 
 	 * @see https://codex.wordpress.org/Appearance_Menus_Screen
 	 * 
@@ -155,39 +163,28 @@ class Auto_Subpage_Menu {
 		foreach ( $menu_ids as $menu_id ) { $this->add_page_into_topmenu( $menu_id, $page ); }
 	}
 
-	/**
-	 * When publish a page then update the menu (add/relocate)
-	 * 
-	 * @param integer $post_id
-	 */
-	function when_publish_page( $page_id ) {
-		if ( $this->is_support_menus() && $this->has_parent( $page_id ) && $this->has_auto_add() ) {
-			$menu_ids = $this->get_auto_add();
-			$page = get_post( $page_id );
-			$this->update_submenu( $menu_ids, $page );
-		}
-	}
-
 	function when_update_page( $page_id, $page_after, $page_before ) {
 
-		// if parent page's changed and
-		// theme support menus and
-		// has auto_add
-		if ( ( $page_after->post_parent != $page_before->post_parent ) && $this->is_support_menus() && $this->has_auto_add() ) {
+		// if support menu and has auto_add
+		if ( $this->is_support_menus() && $this->has_auto_add() ) {
 			$page = $page_after;
 			$menu_ids = $this->get_auto_add();
-			$this->remove_page_from_menus( $menu_ids, $page );
 
-			if ( $this->has_parent( $page_id ) ) {
-				$this->update_submenu( $menu_ids, $page );
-			} else {
-				$this->update_topmenu( $menu_ids, $page );
+			$is_restore = $this->is_restore( $page_after->post_status, $page_before->post_status );
+			$is_parent_change = $this->is_parent_change( $page_after->post_parent, $page_before->post_parent);
+
+			// if it's restored or its page parent's changed
+			if ( $is_restore || $is_parent_change ) {
+				$this->remove_page_from_menus( $menu_ids, $page );
+
+				if ( $this->has_parent( $page_id ) ) {
+					$this->update_submenu( $menu_ids, $page );
+
+				} else {
+					$this->update_topmenu( $menu_ids, $page );
+				}
 			}
 		}
-	}
-
-	function when_restore_page( $page_id ) {
-		$this->when_publish_page( $page_id );
 	}
 }
 
