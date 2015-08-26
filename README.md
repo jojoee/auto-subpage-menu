@@ -1,11 +1,11 @@
 # Auto Subpage Menu
 
-By default wordpress menu system, wordpress can only automatically add/remove **top-level** page to/from menus
+By default wordpress menu system, wordpress can only automatically add/remove **top-level page** to/from menus
 - When **publish** top-level page then add it into menus
 - When **move** top-level page to trash then remove it from menus
 - When **restore** top-level page then add it into menus
 
-this feature has no effect with **child** page, but **Auto Subpage Menu** can
+this feature has no effect with **child page** (subpage), but **Auto Subpage Menu** can
 - When **publish** child page then add it into menus (if its page parent exists in menu)
 - When **update** child page then update menus
 - When **move** child page to trash then remove it from menus
