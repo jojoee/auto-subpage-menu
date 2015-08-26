@@ -7,7 +7,7 @@ Version: 1.1.0
 Author: Nathachai Thongniran
 Author URI: http://jojoee.com/
 Text Domain: asm
-License: GPL2
+License: GPLv2
 */
 
 require_once( 'debug.php' );
