@@ -40,6 +40,9 @@ this feature has no effect with **subpage** (child page), but **Auto Subpage Men
 
 == Changelog ==
 
+= 1.1.2 (27 Aug 2015) =
+* Update readme file according wordpress readme file standard
+
 = 1.1.1 (26 Aug 2015) =
 * Change file name from README.md to readme.txt
 * Update plugin description
@@ -53,8 +56,11 @@ this feature has no effect with **subpage** (child page), but **Auto Subpage Men
 
 == Upgrade Notice ==
 
+= 1.1.2 =
+Update readme file according wordpress readme file standard
+
 = 1.1.1 =
-Update plugin description and readme.txt format
+Update plugin description
 
 = 1.1.0 =
 Fix issue (twice add child page to menus when update with unchanged page parent)
