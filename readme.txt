@@ -1,6 +1,6 @@
 === Auto Subpage Menu ===
 
-Contributors: https://wordpress.org/support/profile/jojoee
+Contributors: Jojoee
 Donate link: 
 Tags: admin, navigation, menu, menus, child page, child pages, page, pages, submenu, submenus, subpage, subpages, child page, child pages
 Requires at least: 3.3.0
