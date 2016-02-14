@@ -31,6 +31,14 @@ this feature has no effect with **subpage** (child page), but **Auto Subpage Men
 3. Go to **Menus** and check `Automatically add new top-level pages to this menu`
 4. Let's see the magic
 
+== Frequently Asked Questions ==
+
+= How to use it ==
+activate the plugin on your plugin dashboard (`/wp-admin/plugins.php`)
+
+= How it work ==
+please see [screenshot](https://wordpress.org/plugins/auto-subpage-menu/screenshots/)
+
 == Screenshots ==
 
 1. When publish subpage then add it into menus (screenshot-1.jpg)
