@@ -1,6 +1,6 @@
 === Auto Subpage Menu ===
 
-Contributors: Jojoee
+Contributors: jojoee
 Donate link: 
 Tags: admin, navigation, menu, menus, child page, child pages, page, pages, submenu, submenus, subpage, subpages, child page, child pages
 Requires at least: 3.3.0
@@ -81,3 +81,4 @@ First release
 * [phpDocumentor](http://www.phpdoc.org/) DocBlock Standard
 * [Auto Subpage Menu](https://wordpress.org/plugins/auto-subpage-menu/) - Wordpress Directory Uri
 * Tab for indent
+* [Repository on Github](https://github.com/jojoee/auto-subpage-menu)
