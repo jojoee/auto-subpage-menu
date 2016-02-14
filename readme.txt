@@ -78,4 +78,6 @@ First release
 
 == Notes ==
 * [WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards)
-* [phpDocumentor](http://www.phpdoc.org/) docblock standard
+* [phpDocumentor](http://www.phpdoc.org/) DocBlock Standard
+* [Auto Subpage Menu](https://wordpress.org/plugins/auto-subpage-menu/) - Wordpress Directory Uri
+* Tab for indent
