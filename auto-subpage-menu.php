@@ -20,19 +20,20 @@ class Auto_Subpage_Menu {
   }
 
   function is_restore( $page_after_status, $page_before_status ) {
-    if ( ( $page_after_status == 'publish' ) && ( $page_before_status == 'trash' ) ) {
+    if ( ( $page_after_status === 'publish' ) &&
+      ( $page_before_status === 'trash' ) ) {
       return true;
-    } else {
-      return false;
     }
+
+    return false;
   }
 
   function is_parent_change( $page_parent_after, $page_parent_before ) {
-    if ( $page_parent_after != $page_parent_before ) {
+    if ( $page_parent_after !== $page_parent_before ) {
       return true;
-    } else {
-      return false;
     }
+
+    return false;
   }
 
   /**
@@ -45,9 +46,9 @@ class Auto_Subpage_Menu {
   function is_support_menus() {
     if ( ! current_theme_supports( 'menus' ) ) {
       return false;
-    } else {
-      return true;
     }
+
+    return true;
   }
 
   /**
@@ -58,12 +59,11 @@ class Auto_Subpage_Menu {
    */
   function has_parent( $page_id ) {
     $post = get_post( $page_id );
-
     if ( ! $post->post_parent ) {
       return false;
-    } else {
-      return true;
     }
+
+    return true;
   }
 
   /**
@@ -75,12 +75,12 @@ class Auto_Subpage_Menu {
    */
   function has_auto_add() {
     $auto_add = get_option( 'nav_menu_options' );
-
-    if ( ! is_array( $auto_add ) || empty( $auto_add ) || ! isset( $auto_add['auto_add'] ) || ! is_array( $auto_add['auto_add'] ) || empty( $auto_add['auto_add'] ) ) {
+    if ( ! is_array( $auto_add ) || empty( $auto_add ) ||
+      ! isset( $auto_add['auto_add'] ) || ! is_array( $auto_add['auto_add'] ) || empty( $auto_add['auto_add'] ) ) {
       return false;
-    } else {
-      return true;
     }
+
+    return true;
   }
 
   function get_auto_add() {
@@ -110,7 +110,6 @@ class Auto_Subpage_Menu {
 
       } else {
         foreach ( $menu_items as $menu_item ) {
-
           // if page's existed in menu, then remove it from menu
           if ( $menu_item->object_id == $page->ID ) { $this->remove_page_from_menu( $menu_item->ID ); }
         } 
@@ -137,7 +136,6 @@ class Auto_Subpage_Menu {
   }
 
   function update_submenu( $menu_ids, $page ) {
-
     // loop through each menu
     foreach ( $menu_ids as $menu_id ) {
       $page_parent = null;
@@ -147,29 +145,34 @@ class Auto_Subpage_Menu {
         continue;
 
       } else {
-
         // loop through each menu item
         foreach ( $menu_items as $menu_item ) {
-
           // if page's existed in this menu, then ignore
-          if ( $menu_item->object_id == $page->ID ) { continue; }
+          if ( $menu_item->object_id == $page->ID ) {
+            continue;
+          }
 
           // if page parent's existed in this menu, then get this menu item
-          if ( $menu_item->object_id == $page->post_parent ) { $page_parent = $menu_item; }
+          if ( $menu_item->object_id == $page->post_parent ) {
+            $page_parent = $menu_item;
+          }
         }
       }
 
       // if page has parent page, then add page into sub-menu under page parent
-      if ( ! is_null( $page_parent ) ) { $this->add_page_into_submenu( $menu_id, $page, $page_parent ); }
+      if ( ! is_null( $page_parent ) ) {
+        $this->add_page_into_submenu( $menu_id, $page, $page_parent );
+      }
     }
   }
 
   function update_topmenu( $menu_ids, $page ) {
-    foreach ( $menu_ids as $menu_id ) { $this->add_page_into_topmenu( $menu_id, $page ); }
+    foreach ( $menu_ids as $menu_id ) {
+      $this->add_page_into_topmenu( $menu_id, $page );
+    }
   }
 
   function when_update_page( $page_id, $page_after, $page_before ) {
-
     // if support menu and has auto_add
     if ( $this->is_support_menus() && $this->has_auto_add() ) {
       $page = $page_after;
