@@ -48,6 +48,14 @@ please see [screenshot](https://wordpress.org/plugins/auto-subpage-menu/screensh
 
 == Changelog ==
 
+= 1.1.4
+* Fix issue - plugin is not working if not using default table prefix (wp_), found and fixed by [ncwebdev](https://wordpress.org/support/profile/ncwebdev), [topic](https://wordpress.org/support/topic/menu-link-doesnt-work-properly-when-moving-a-page)
+* Update code style
+* Add TODO section
+
+= 1.1.3
+* Update meta (readme file, description, link)
+
 = 1.1.2 (27 Aug 2015) =
 * Update readme file according wordpress readme file standard
 
@@ -62,23 +70,15 @@ please see [screenshot](https://wordpress.org/plugins/auto-subpage-menu/screensh
 = 1.0.0 (23 Aug 2015) =
 * First release
 
-== Upgrade Notice ==
-
-= 1.1.2 =
-Update readme file according wordpress readme file standard
-
-= 1.1.1 =
-Update plugin description
-
-= 1.1.0 =
-Fix issue (twice add child page to menus when update with unchanged page parent)
-
-= 1.0.0 =
-First release
-
 == Notes ==
+
 * [WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards)
 * [phpDocumentor](http://www.phpdoc.org/) DocBlock Standard
 * [Auto Subpage Menu](https://wordpress.org/plugins/auto-subpage-menu/) - Wordpress Directory Uri
-* Tab for indent
+* 2 spaces for indent
 * [Repository on Github](https://github.com/jojoee/auto-subpage-menu)
+
+= TODO
+* [ ] Implement DocBlock to all
+* [ ] Automatically update child-page when its parent have been move, suggested by [ncwebdev](https://wordpress.org/support/profile/ncwebdev), [topic](https://wordpress.org/support/topic/menu-link-doesnt-work-properly-when-moving-a-page)
+* [ ] Add other versions into wordpress download page
