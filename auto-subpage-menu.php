@@ -90,8 +90,13 @@ class Auto_Subpage_Menu {
 	}
 
 	function remove_page_from_menu( $object_id ) {
-		global $wpdb;
-		$query = sprintf( 'DELETE FROM wp_term_relationships WHERE object_id = %d', $object_id );
+		global $wpdb,
+			$table_prefix;
+
+		$query = sprintf( 'DELETE FROM %s_term_relationships WHERE object_id = %d',
+			$table_prefix,
+			$object_id
+		);
 
 		$wpdb->get_results( $query, OBJECT );
 	}
