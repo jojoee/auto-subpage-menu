@@ -48,12 +48,12 @@ please see [screenshot](https://wordpress.org/plugins/auto-subpage-menu/screensh
 
 == Changelog ==
 
-= 1.1.4
+= 1.1.4 (24 Apr 2016) =
 * Fix issue - plugin is not working if not using default table prefix (wp_), found and fixed by [ncwebdev](https://wordpress.org/support/profile/ncwebdev), [topic](https://wordpress.org/support/topic/menu-link-doesnt-work-properly-when-moving-a-page)
 * Update code style
 * Add TODO section
 
-= 1.1.3
+= 1.1.3 (14 Feb 2016) =
 * Update meta (readme file, description, link)
 
 = 1.1.2 (27 Aug 2015) =
