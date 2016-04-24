@@ -78,7 +78,7 @@ please see [screenshot](https://wordpress.org/plugins/auto-subpage-menu/screensh
 * 2 spaces for indent
 * [Repository on Github](https://github.com/jojoee/auto-subpage-menu)
 
-= TODO
+= TODO =
 * [ ] Implement DocBlock to all
 * [ ] Automatically update child-page when its parent have been move, suggested by [ncwebdev](https://wordpress.org/support/profile/ncwebdev), [topic](https://wordpress.org/support/topic/menu-link-doesnt-work-properly-when-moving-a-page)
 * [ ] Add other versions into wordpress download page
