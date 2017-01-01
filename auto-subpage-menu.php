@@ -3,7 +3,7 @@
 Plugin Name: Auto Subpage Menu
 Plugin URI: https://wordpress.org/plugins/auto-subpage-menu/
 Description: Automatically add child page (subpage) into menus, also update hierarchy / remove / restore subpage on menu for you.
-Version: 1.1.4
+Version: 1.1.5
 Author: Nathachai Thongniran
 Author URI: http://jojoee.com/
 Text Domain: asm
