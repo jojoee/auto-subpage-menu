@@ -10,13 +10,23 @@ Text Domain: asm
 License: GPLv2
 */
 
-require_once( 'debug.php' );
-
 class Auto_Subpage_Menu {
 
   function __construct() {
     add_action( 'post_updated', array( &$this, 'when_update_page' ), 10, 4 );
     add_action( 'wp_trash_post', '_wp_delete_post_menu_item' );
+  }
+
+  function dd( $var, $die = true ) {
+    echo '<pre>';
+    print_r( $var );
+    echo '</pre>';
+
+    if ( $die ) { die(); }
+  }
+
+  function da( $var ) {
+    $this->dd( $var, false );
   }
 
   function is_restore( $page_after_status, $page_before_status ) {
