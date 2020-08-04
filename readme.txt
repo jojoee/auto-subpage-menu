@@ -26,7 +26,7 @@ this feature has no effect with **subpage** (child page), but **Auto Subpage Men
 
 == Installation ==
 
-1. Install the plugin via admin/s plguins screen or download and upload this plugin into `wp-content/plugins` directory
+1. Install the plugin via plugin's dashboard or download and upload this plugin into `wp-content/plugins` directory
 2. Activate the plugin through the **Plugins** menu in WordPress
 3. Go to **Menus** and check `Automatically add new top-level pages to this menu`
 4. Let's see the magic
@@ -78,7 +78,8 @@ please see [screenshot](https://wordpress.org/plugins/auto-subpage-menu/screensh
 * 2 spaces for indent
 * [Repository on Github](https://github.com/jojoee/auto-subpage-menu)
 
-= TODO =
+== TODO ==
+
 * [ ] Implement DocBlock to all
 * [ ] Automatically update child-page when its parent have been move, suggested by [ncwebdev](https://wordpress.org/support/profile/ncwebdev), [topic](https://wordpress.org/support/topic/menu-link-doesnt-work-properly-when-moving-a-page)
 * [ ] Add other versions into wordpress download page
