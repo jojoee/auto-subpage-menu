@@ -4,7 +4,7 @@ Contributors: jojoee
 Donate link: 
 Tags: admin, navigation, menu, menus, child page, child pages, page, pages, submenu, submenus, subpage, subpages, child page, child pages
 Requires at least: 3.3.0
-Tested up to: 4.3
+Tested up to: 5.4.2
 Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
